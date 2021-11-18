@@ -4,12 +4,12 @@
 
 " bootstrap vim-plug
 if has('unix')
-    if empty(glob("~/.config/nvim/autoload/plug.vim"))
-        silent call mkdir(expand("~/.config/nvim/autoload", 1), 'p')
-        execute '!curl -fLo ~/.config/nvim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+    if empty(glob("~/.vim/autoload/plug.vim"))
+        silent call mkdir(expand("~/.vim/autoload", 1), 'p')
+        execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
     endif
 
-    call plug#begin('~/.config/nvim/bundle')
+    call plug#begin('~/.vim/bundle')
 else
     "if empty(glob("~\AppData\Local\nvim\autoload\plug.vim"))
     "    silent call mkdir(expand("~\AppData\Local\nvim\autoload", 1), 'p')

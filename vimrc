@@ -2,13 +2,6 @@ set nocompatible
 filetype plugin indent on
 syntax on
 
-" enable python when using neovim
-" prerequisite: neovim python package
-" sudo pip install neovim
-if has('nvim')
-    runtime! python_setup.vim
-endif
-
 set autoindent
 set backspace=indent,eol,start 	" Backspace as expected
 set backupcopy=yes
@@ -103,22 +96,18 @@ else
     set wrapmargin=0
 endif
 
-if has('nvim')
-    set inccommand=nosplit
-else
-    set viminfo='10,:20,\"100,n~/.viminfo
+set viminfo='10,:20,\"100,n~/.viminfo
 
-    " Set cursor shape
-    "
-    " solid vertical bar in insert mode
-    let &t_SI .= "\<Esc>[6 q"
-    " solid block in normal mode
-    let &t_EI .= "\<Esc>[2 q"
+" Set cursor shape
+"
+" solid vertical bar in insert mode
+let &t_SI .= "\<Esc>[6 q"
+" solid block in normal mode
+let &t_EI .= "\<Esc>[2 q"
 
-    " needed for termguicolors: see help xterm-true-color
-    let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
-    let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
-endif
+" needed for termguicolors: see help xterm-true-color
+let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
+let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
 
 " Python syntax settings
 let python_highlight_all = 1
@@ -182,14 +171,13 @@ else
     endif
 endif
 
-runtime init-autocmd.vim
-runtime init-tabline.vim
-runtime init-bundles.vim
-runtime init-statusline.vim
-runtime init-plugins.vim
-runtime init-lsp.vim
-runtime init-headertoggle.vim
-runtime init-mappings.vim
-runtime init-neovide.vim
+runtime autocmd.vim
+runtime tabline.vim
+runtime bundles.vim
+runtime statusline.vim
+runtime plugins.vim
+runtime headertoggle.vim
+runtime mappings.vim
+runtime neovide.vim
 
 set secure " don't allow usafe commands in project .vimrc files
