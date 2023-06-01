@@ -40,7 +40,7 @@ let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
+" Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 let g:nerd_ft = ''
 function! NERDCommenter_before()
@@ -166,13 +166,9 @@ let g:vue_pre_processors = ['scss']
 let g:ale_fix_on_save = 1
 let g:ale_linters_explicit = 1
 let g:ale_completion_enabled = 1
-if has("win32")
-    let g:ale_sign_error = '⛔️'
-    let g:ale_sign_warning = '💡'
-else
-    let g:ale_sign_error = '❌ '
-    let g:ale_sign_warning = '💡'
-end
+let g:ale_sign_error = 'X '
+let g:ale_sign_warning = '!'
+
 " let g:ale_linter_aliases = {'svelte': ['css', 'javascript']}
 let g:ale_linters = {
 \   'python': ['flake8', 'mypy'],

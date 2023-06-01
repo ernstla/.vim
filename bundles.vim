@@ -45,15 +45,15 @@ if !exists('g:vscode')
     " Languages
     Plug 'cespare/vim-toml', {'for': 'toml'}
     Plug 'lifepillar/pgsql.vim', {'for': 'sql'}
-    Plug 'mxw/vim-jsx', {'for': 'javascript'}
+    " Plug 'mxw/vim-jsx', {'for': 'javascript'}
     Plug 'pangloss/vim-javascript', {'for': 'javascript'}
     Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
     Plug 'posva/vim-vue', {'for': 'vue'}
-    Plug 'rust-lang/rust.vim', {'for': 'rust'}
+    " Plug 'rust-lang/rust.vim', {'for': 'rust'}
     Plug 'tpope/vim-haml', {'for': 'scss'}
     Plug 'evanleck/vim-svelte', {'for': 'svelte'}
-    Plug 'ziglang/zig.vim'
-    Plug 'https://git.serious.selfip.org/ernst/nim.vim.git'
+    " Plug 'ziglang/zig.vim'
+    " Plug 'https://git.serious.selfip.org/ernst/nim.vim.git'
 
     " Neovim only
     if has("nvim")

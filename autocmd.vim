@@ -37,9 +37,6 @@ autocmd BufWritePre *.toml :%s/\s\+$//e
 autocmd BufWritePre *.vue :%s/\s\+$//e
 autocmd BufWritePre *.svelte :%s/\s\+$//e
 
-autocmd BufWritePre *.php lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.nim lua vim.lsp.buf.formatting_sync(nil, 1000)
-
 autocmd VimResized * wincmd =
 
 " resync syntax highlighting - may be slow
@@ -60,29 +57,3 @@ autocmd FileChangedShell * echohl echoError | echo "------------------------- Wa
 
 autocmd QuickFixCmdPost [^l]* botright cwindow
 autocmd QuickFixCmdPost l*    botright lwindow
-
-
-if has('nvim')
-    " Terminal
-    autocmd TermOpen * setlocal nonumber norelativenumber
-    autocmd TermOpen term://* startinsert
-
-    augroup terminal_settings
-        autocmd!
-
-        autocmd BufWinEnter,WinEnter term://* startinsert
-        autocmd BufLeave term://* stopinsert
-
-        " Ignore various filetypes as those will close terminal automatically
-        " Ignore fzf, ranger, coc
-        autocmd TermClose term://*
-            \ if (expand('<afile>') !~ "fzf") && (expand('<afile>') !~ "ranger") && (expand('<afile>') !~ "coc") |
-            \   call nvim_input('<CR>')  |
-            \ endif
-    augroup END
-
-    " Neovim LSP
-    autocmd Filetype nim setlocal omnifunc=v:lua.vim.lsp.omnifunc
-    autocmd Filetype vue setlocal omnifunc=v:lua.vim.lsp.omnifunc
-    autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
-endif

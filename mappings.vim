@@ -199,16 +199,6 @@ if has('nvim')
     nmap <buffer> <Leader>e ^v%y<C-w>wpi<cr><C-\><C-n><C-w>p
     " Evaluate buffer"
     nmap <buffer> <Leader>b ggVGy<C-w>wpi<cr><C-\><C-n><C-w>p
-
-    " Neovim LSP
-    nnoremap <silent> gd            <cmd>lua vim.lsp.buf.declaration()<CR>
-    nnoremap <silent> gG         <cmd>lua vim.lsp.buf.definition()<CR>
-    nnoremap <silent> K             <cmd>lua vim.lsp.buf.hover()<CR>
-    nnoremap <silent> gD            <cmd>lua vim.lsp.buf.implementation()<CR>
-    nnoremap <silent> <leader>k     <cmd>lua vim.lsp.buf.signature_help()<CR>
-    nnoremap <silent> 1gD           <cmd>lua vim.lsp.buf.type_definition()<CR>
-    nnoremap <silent> gr            <cmd>lua vim.lsp.buf.references()<CR>
-    nnoremap <silent> g0            <cmd>lua vim.lsp.buf.document_symbol()<CR>
 endif
 
 " Format json
