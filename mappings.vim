@@ -258,6 +258,9 @@ nnoremap gm :call nerdcommenter#Comment("n", "Comment")<cr>
 vnoremap gm :call nerdcommenter#Comment("v", "Comment")<cr>
 nnoremap gs :call nerdcommenter#Comment("n", "Invert")<cr>
 vnoremap gs :call nerdcommenter#Comment("v", "Invert")<cr>
+" '<C-_>', -- <C-_> means <c-/> -- see :help :map-special-keys
+nnoremap <C-_> :call nerdcommenter#Comment("n", "Invert")<cr>
+vnoremap <C-_> :call nerdcommenter#Comment("v", "Invert")<cr>
 
 "" FOR WSL ONLY
 if has('wsl')
