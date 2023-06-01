@@ -79,7 +79,7 @@ set undodir=~/.undovim
 set undofile                    " Persistent undo
 set undolevels=2000
 set undoreload=10000
-set viminfo='10,:20,\"100,n~/.viminfo
+set viminfo='10,:20,\"100,n~/.vim/viminfo
 set virtualedit=block           " Allow block mode after end of line
 set wildignore=*.o,*.obj,*.pyc,*.swc,*.DS_STORE,*.bkp
 set wildmenu

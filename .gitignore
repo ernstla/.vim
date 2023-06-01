@@ -2,6 +2,7 @@
 *.cache
 .cache
 .tags*
+viminfo*
 sessions
 spell
 .netrwhist
